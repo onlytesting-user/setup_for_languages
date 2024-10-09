@@ -54,8 +54,7 @@
     "**/.hg": true,
     "**/CVS": true,
     "**/.DS_Store": true,
-    "**/Thumbs.db": true,
-    "**/.vscode": true,
+    "**/Thumbs.db": true
   },
 
   // * Workbench Configs
