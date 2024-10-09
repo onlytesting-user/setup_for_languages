@@ -2,39 +2,77 @@
 
 ```markdown
 {
-  // My Personal Configs
-  "editor.tabSize": 2,
-  "editor.insertSpaces": true,
-  "files.autoSave": "afterDelay",
-  "editor.formatOnSave": true,
-  "files.insertFinalNewline": true,
-  "files.trimTrailingWhitespace": true,
-  "files.eol": "\n",
-
-  // Configs by Diego (Rocket)
+  // * Editor Configs
   "editor.fontFamily": "JetBrains Mono",
   "editor.fontLigatures": true,
   "editor.fontSize": 15,
   "editor.lineHeight": 1.5,
-  "editor.rulers": [80],
+  "editor.rulers": [
+    80
+  ],
   "editor.semanticHighlighting.enabled": true,
   "editor.minimap.enabled": false,
   "editor.accessibilitySupport": "off",
   "editor.suggestSelection": "first",
   "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.stickyScroll.enabled": false,
+  "editor.codeLens": true,
+  "editor.glyphMargin": true,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 4,
+  "editor.indentSize": "tabSize",
+  "editor.snippetSuggestions": "top",
+  "editor.tabCompletion": "on",
+  "editor.quickSuggestions": {
+    "other": "on",
+    "comments": "off",
+    "strings": "off"
+  },
+
+  // * Files Configs
+  "files.eol": "\n",
+  "files.autoSave": "afterDelay",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.associations": {
+    "*.js": "javascript",
+    "*.jsx": "javascriptreact",
+    "*.ts": "typescript",
+    "*.tsx": "typescriptreact",
+    ".prettierrc": "json",
+    "*.html": "html",
+    "*.css": "css",
+    "*.md": "markdown",
+    "*.json": "jsonc",
+    "*.prisma": "prisma"
+    "*.yaml": "yaml",
+    ".env": "dotenv",
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/.vscode": true,
+  },
+
+  // * Workbench Configs
   "workbench.startupEditor": "newUntitledFile",
   "workbench.editor.labelFormat": "short",
   "workbench.layoutControl.enabled": false,
-  "breadcrumbs.enabled": false,
-  "window.commandCenter": false,
-  "security.workspace.trust.untrustedFiles": "newWindow",
-  "git.openRepositoryInParentFolders": "always",
-  "update.mode": "default",
-  "update.showReleaseNotes": false,
+  "workbench.tree.enableStickyScroll": false,
+  "workbench.editor.empty.hint": "hidden",
+
+  // * Terminal Configs
   "terminal.integrated.fontSize": 15,
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
   "terminal.integrated.defaultProfile.windows": "PowerShell",
   "terminal.integrated.gpuAcceleration": "on",
+
+  // * Explorer Configs
+  "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.sortOrder": "foldersNestsFiles",
   "explorer.compactFolders": false,
@@ -48,29 +86,44 @@
     "tailwind.config.*": "tailwind.config*, postcss.config*",
     "tsconfig.json": "tsconfig*",
     "package.json": ".eslint*, .prettier*, package-lock*, pnpm-*, bun.lockb, vite*",
-    "Dockerfile": "Dockerfile*, .docker*",
-    "docker-compose.yaml": "docker-compose*",
-    ".editorconfig": ".editorconfig*",
-    "README.md": "README*, CHANGELOG.md",
-    "Makefile": "Makefile*",
-    ".gitignore": ".gitignore*, .gitattributes, .gitmodules",
-    ".env": ".env*, .envrc"
-  },
-  "files.associations": {
-    "*.js": "javascript",
-    "*.jsx": "javascriptreact",
-    "*.ts": "typescript",
-    "*.tsx": "typescriptreact",
-    ".prettierrc": "json",
-    "*.html": "html",
-    "*.css": "css",
-    "*.md": "markdown",
-    "*.json": "jsonc",
-    "*.prisma": "prisma"
+    "appsettings.json": "appsettings*.json, connection*",
+    "docker-compose*": "docker-compose*, .docker-compose*",
+    "Dockerfile": "Dockerfile*, .dockerignore",
+    "README.md": "*.md, LICENSE",
+    ".gitattributes": ".gitmodules, .gitignore",
   },
 
-  // Configs for Theme
-  "workbench.colorTheme": "Flate Arc Italic",
+  // * Update Configs
+  "update.mode": "default",
+  "update.showReleaseNotes": false,
+
+  // * diffEditor Configs
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "diffEditor.ignoreTrimWhitespace": true,
+  "diffEditor.renderSideBySide": true,
+  "diffEditor.wordWrap": "on",
+  "diffEditor.renderIndicators": true,
+
+  // * Git Configs
+  "git.openRepositoryInParentFolders": "always",
+  "git.decorations.enabled": true,
+
+  // * Security Configs
+  "security.workspace.trust.untrustedFiles": "newWindow",
+  "security.promptForLocalFileProtocolHandling": true,
+
+  // * Other Configs
+  "breadcrumbs.enabled": false,
+  "window.commandCenter": false,
+  "extensions.ignoreRecommendations": true,
+  "extensions.autoCheckUpdates": true,
+
+  // * Configs for Themes
+  "workbench.colorTheme": "One Dark Pro Monokai Darker",
+  "theme-by-language.themes": {
+    "*": "One Dark Pro Monokai Darker",
+    "filename:COMMIT_EDITMSG": "Default Dark Modern",
+  },
 
   // Configs for Prettier
   "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -102,10 +155,10 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
-  }, // @todo-warn Retirar se decidir não usar React
+  }, // NOTE Retirar se decidir não usar React
   "emmet.syntaxProfiles": {
     "javascript": "jsx"
-  }, // @todo-warn Retirar se decidir não usar React
+  }, // NOTE Retirar se decidir não usar React
   "[javascript]": {
     "editor.formatOnSave": true,
     "editor.snippetSuggestions": "top",
@@ -150,78 +203,56 @@
   "code-runner.runInTerminal": true,
   "code-runner.enableAppInsights": false,
 
-  // Configs for Inline Bookmarks
-  "inline-bookmarks.expert.custom.styles": {
-    "red": {
-      // An item that requires a bugfix
-      "gutterIconColor": "#F44336",
-      "light": {
-        "fontWeight": "bold"
-      },
-      "dark": {
-        "color": "Chocolate"
-      }
-    },
-    "blue": {
-      // An item that is awaiting completion
-      "gutterIconColor": "#157EFB",
-      "light": {
-        "fontWeight": "bold"
-      },
-      "dark": {
-        "color": "Chocolate"
-      }
-    },
-    "green": {
-      // An item that requires additional review
-      "gutterIconColor": "#2FCE7C",
-      "light": {
-        "fontWeight": "bold"
-      },
-      "dark": {
-        "color": "Chocolate"
-      }
-    },
-    "purple": {
-      // Used for generated default snippets
-      "gutterIconColor": "#C679E0",
-      "light": {
-        "fontWeight": "bold"
-      },
-      "dark": {
-        "color": "Chocolate"
-      }
-    },
-    "yellow": {
-      // An important note for a specific code section
-      "gutterIconColor": "#F4F400",
-      "light": {
-        "fontWeight": "bold"
-      },
-      "dark": {
-        "color": "Chocolate"
-      }
-    }
-  },
-  "inline-bookmarks.expert.custom.words.mapping": {
-    "blue": ["@todo[ \\t\\n]"],
-    "purple": ["@stub[ \t\\n]"],
-    "green": ["@review[ \\t\\n]"],
-    "red": ["@fixme[ \\t\\n]"],
-    "yellow": ["@note[ \\t\\n]"]
+  // * Configs for UMLet
+  "umlet.theme": "Light theme",
+  "[umlet]": {
+    "files.autoSave": "onFocusChange",
   },
 
-  // Configs for Code Spell Checker
+  // * Configs for Symbols
+  "symbols.hidesExplorerArrows": false,
+  "workbench.iconTheme": "symbols",
+  "symbols.files.associations": {
+    "*.uxf": "drawio",
+    "*.txt": "text"
+  },
+  "symbols.folders.associations": {
+    "Controllers": "folder-app",
+    "Migrations": "folder-database",
+    "Data": "folder-context",
+    "Dto": "folder-yellow",
+    "Requests": "folder-green",
+    "Responses": "folder-sky",
+    "Tests": "folder-orange",
+    "Properties": "folder-gray-outline",
+    "Configurations": "folder-config",
+    "Services": "folder-target",
+    "Views": "folder-layout",
+    "Repositories": "folder-database",
+    "Mappers": "folder-router",
+    "Filters": "folder-purple-outline",
+    "Logging": "folder-gray",
+    "Extensions": "folder-red-outline"
+  },
+
+  // * Configs for YAML
+  "yaml.format.enable": true,
+  "yaml.format.singleQuote": true,
+  "[yaml]": {
+    "editor.formatOnSave": true,
+    "editor.autoIndent": "keep",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    }
+  },
+
+  // * Configs for Code Spell Checker
   "cSpell.language": "en,pt,pt_BR",
   "cSpell.userWords": [
-    "Ashutosh's",
-    "envrc",
-    "esbenp",
-    "Flate",
-    "gitmodules",
-    "lockb",
-    "Parens",
-    "rgba"
-  ]
+
+  ],
 }
 ```

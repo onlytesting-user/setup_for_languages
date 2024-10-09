@@ -106,6 +106,10 @@
 
   // * Configs for Themes
   "workbench.colorTheme": "One Dark Pro Monokai Darker",
+  "theme-by-language.themes": {
+    "*": "One Dark Pro Monokai Darker",
+    "filename:COMMIT_EDITMSG": "Default Dark Modern",
+  },
 
   // * Configs for UMLet
   "umlet.theme": "Light theme",

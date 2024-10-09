@@ -31,7 +31,7 @@
 
  // * Configs for Python
  "[python]": {
-    "editor.rulers": [80],
+    "editor.rulers": [79],
     "editor.defaultFormatter": "ms-python.autopep8",
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
@@ -130,6 +130,10 @@
 
   // * Configs for Themes
   "workbench.colorTheme": "One Dark Pro Monokai Darker",
+  "theme-by-language.themes": {
+    "*": "One Dark Pro Monokai Darker",
+    "filename:COMMIT_EDITMSG": "Default Dark Modern",
+  },
 
   // * Configs for Symbols
   "symbols.hidesExplorerArrows": false,
