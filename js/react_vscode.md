@@ -8,7 +8,7 @@
   "editor.fontSize": 15,
   "editor.lineHeight": 1.5,
   "editor.rulers": [
-    100
+    80
   ],
   "editor.semanticHighlighting.enabled": true,
   "editor.minimap.enabled": false,
@@ -35,9 +35,16 @@
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
   "files.associations": {
-    "*.cs": "csharp",
+    "*.js": "javascript",
+    "*.jsx": "javascriptreact",
+    "*.ts": "typescript",
+    "*.tsx": "typescriptreact",
+    ".prettierrc": "json",
+    "*.html": "html",
+    "*.css": "css",
     "*.md": "markdown",
     "*.json": "jsonc",
+    "*.prisma": "prisma",
     "*.yaml": "yaml",
     ".env": "dotenv",
   },
@@ -70,8 +77,14 @@
   "explorer.compactFolders": false,
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.patterns": {
-    "*.cs": "*.csproj",
-    "appsettings.json": "appsettings*.json, connection*",
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "*.yaml": "*.yml",
+    "tailwind.config.*": "tailwind.config*, postcss.config*",
+    "tsconfig.json": "tsconfig*",
+    "package.json": ".eslint*, .prettier*, package-lock*, pnpm-*, bun.lockb, vite*",
     "docker-compose*": "docker-compose*, .docker-compose*",
     "Dockerfile": "Dockerfile*, .dockerignore",
     "README.md": "*.md, LICENSE",
@@ -100,6 +113,111 @@
     "*": "One Dark Pro Monokai Darker",
     "filename:COMMIT_EDITMSG": "Default Dark Modern",
   },
+
+  // * Configs for Prettier
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.printWidth": 80,
+  "prettier.tabWidth": 2,
+  "prettier.useTabs": false,
+  "prettier.endOfLine": "lf",
+  "prettier.proseWrap": "always",
+  "prettier.trailingComma": "es5",
+  "prettier.semi": true,
+  "prettier.singleQuote": true,
+  "prettier.arrowParens": "always",
+  "prettier.bracketSpacing": true,
+
+  // * Configs for ESLint
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "graphql"
+  ],
+
+  // * Configs for JavaScript
+  "javascript.suggest.autoImports": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx",
+    "typescriptreact": "tsx"
+  },
+  "[javascript]": {
+    "editor.formatOnSave": true,
+    "editor.snippetSuggestions": "top",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit",
+      "source.fixAll.ts": "explicit"
+    },
+    "editor.tabCompletion": "on",
+    "editor.quickSuggestions": {
+      "other": "on",
+      "comments": "off",
+      "strings": "on"
+    }
+  },
+  "javascript.preferences.organizeImports": {
+    "groups": [
+      "module",
+      "builtin",
+      "type",
+      "parent",
+      "sibling",
+      "internal",
+      "style"
+    ],
+    "sortOnBeforeOrganize": true
+  },
+
+  // * Configs for TypeScript
+  "typescript.tsserver.log": "off",
+  "typescript.suggest.autoImports": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.preferences.preferTypeOnlyAutoImports": true,
+  "typescript.preferences.jsxAttributeCompletionStyle": "auto",
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "[typescript]": {
+    "editor.formatOnSave": true,
+    "editor.snippetSuggestions": "top",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit",
+      "source.fixAll.ts": "explicit"
+    },
+    "editor.quickSuggestions": {
+      "other": "on",
+      "comments": "off",
+      "strings": "on"
+    }
+  },
+  "typescript.preferences.organizeImports": {
+    "groups": [
+      "module",
+      "builtin",
+      "type",
+      "parent",
+      "sibling",
+      "internal",
+      "style"
+    ],
+    "sortOnBeforeOrganize": true
+  },
+
+  // * Configs for Prisma
+  "[prisma]": {
+    "editor.formatOnSave": true
+  },
+
+  // * Configs for Code Runner
+  "code-runner.runInTerminal": true,
+  "code-runner.enableAppInsights": false,
 
   // * Configs for UMLet
   "umlet.theme": "Light theme",
@@ -131,12 +249,6 @@
     "Filters": "folder-purple-outline",
     "Logging": "folder-gray",
     "Extensions": "folder-red-outline"
-  },
-
-  // * Configs for Code Runner
-  "code-runner.runInTerminal": true,
-  "code-runner.executorMap": {
-    "csharp": "cd $dir && dotnet run",
   },
 
   // * Configs for YAML

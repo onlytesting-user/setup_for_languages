@@ -45,7 +45,6 @@
     "--aggressive"
 ],
 
-
   // * Configs for Pylance
   "python.languageServer": "Pylance",
   "python.analysis.typeCheckingMode": "basic",
@@ -53,7 +52,6 @@
   "python.analysis.inlayHints.functionReturnTypes": true,
   "python.analysis.logLevel": "Information",
   "python.analysis.autoFormatStrings": true,
-
 
   // * Files Configs
   "files.eol": "\n",
@@ -102,10 +100,6 @@
     ".gitattributes": ".gitmodules, .gitignore",
   },
 
-  // * Update Configs
-  "update.mode": "default",
-  "update.showReleaseNotes": false,
-
   // * diffEditor Configs
   "diffEditor.hideUnchangedRegions.enabled": true,
   "diffEditor.ignoreTrimWhitespace": true,
@@ -117,15 +111,10 @@
   "git.openRepositoryInParentFolders": "always",
   "git.decorations.enabled": true,
 
-  // * Security Configs
-  "security.workspace.trust.untrustedFiles": "newWindow",
-  "security.promptForLocalFileProtocolHandling": true,
-
   // * Other Configs
   "breadcrumbs.enabled": false,
   "window.commandCenter": false,
   "extensions.ignoreRecommendations": true,
-  "extensions.autoCheckUpdates": true,
 
   // * Configs for Themes
   "workbench.colorTheme": "One Dark Pro Monokai Darker",

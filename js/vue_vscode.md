@@ -36,15 +36,14 @@
   "files.insertFinalNewline": true,
   "files.associations": {
     "*.js": "javascript",
-    "*.jsx": "javascriptreact",
     "*.ts": "typescript",
-    "*.tsx": "typescriptreact",
+    "*.vue": "vue",
     ".prettierrc": "json",
     "*.html": "html",
     "*.css": "css",
     "*.md": "markdown",
     "*.json": "jsonc",
-    "*.prisma": "prisma"
+    "*.prisma": "prisma",
     "*.yaml": "yaml",
     ".env": "dotenv",
   },
@@ -79,8 +78,7 @@
   "explorer.fileNesting.patterns": {
     "*.ts": "${capture}.js",
     "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
-    "*.jsx": "${capture}.js",
-    "*.tsx": "${capture}.ts",
+    "*.vue": "${capture}.ts, ${capture}.js, ${capture}.scss, ${capture}.css",
     "*.yaml": "*.yml",
     "tailwind.config.*": "tailwind.config*, postcss.config*",
     "tsconfig.json": "tsconfig*",
@@ -91,10 +89,6 @@
     "README.md": "*.md, LICENSE",
     ".gitattributes": ".gitmodules, .gitignore",
   },
-
-  // * Update Configs
-  "update.mode": "default",
-  "update.showReleaseNotes": false,
 
   // * diffEditor Configs
   "diffEditor.hideUnchangedRegions.enabled": true,
@@ -107,15 +101,10 @@
   "git.openRepositoryInParentFolders": "always",
   "git.decorations.enabled": true,
 
-  // * Security Configs
-  "security.workspace.trust.untrustedFiles": "newWindow",
-  "security.promptForLocalFileProtocolHandling": true,
-
   // * Other Configs
   "breadcrumbs.enabled": false,
   "window.commandCenter": false,
   "extensions.ignoreRecommendations": true,
-  "extensions.autoCheckUpdates": true,
 
   // * Configs for Themes
   "workbench.colorTheme": "One Dark Pro Monokai Darker",
@@ -124,7 +113,7 @@
     "filename:COMMIT_EDITMSG": "Default Dark Modern",
   },
 
-  // Configs for Prettier
+  // * Configs for Prettier
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "prettier.printWidth": 80,
   "prettier.tabWidth": 2,
@@ -137,27 +126,30 @@
   "prettier.arrowParens": "always",
   "prettier.bracketSpacing": true,
 
-  // Configs for ESLint
+  // * Configs for ESLint
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
   "eslint.validate": [
     "javascript",
-    "javascriptreact",
     "typescript",
-    "typescriptreact",
+    "vue",
     "graphql"
   ],
 
-  // Configs for JavaScript
+  // * Configs for JavaScript
   "javascript.suggest.autoImports": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "emmet.includeLanguages": {
-    "javascript": "javascriptreact"
-  }, // NOTE Retirar se decidir não usar React
+    "javascript": "javascriptreact",
+    "typescript": "typescript",
+    "vue-html": "html",
+    "vue": "html"
+  },
   "emmet.syntaxProfiles": {
-    "javascript": "jsx"
-  }, // NOTE Retirar se decidir não usar React
+    "javascript": "jsx",
+    "vue-html": "html"
+  },
   "[javascript]": {
     "editor.formatOnSave": true,
     "editor.snippetSuggestions": "top",
@@ -172,13 +164,26 @@
       "strings": "on"
     }
   },
+  "javascript.preferences.organizeImports": {
+    "groups": [
+      "module",
+      "builtin",
+      "type",
+      "parent",
+      "sibling",
+      "internal",
+      "style"
+    ],
+    "sortOnBeforeOrganize": true
+  },
 
-  // Configs for TypeScript
+  // * Configs for TypeScript
   "typescript.tsserver.log": "off",
   "typescript.suggest.autoImports": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "typescript.preferences.preferTypeOnlyAutoImports": true,
-  "explorer.confirmDelete": false,
+  "typescript.preferences.jsxAttributeCompletionStyle": "auto",
+  "typescript.preferences.importModuleSpecifier": "relative",
   "[typescript]": {
     "editor.formatOnSave": true,
     "editor.snippetSuggestions": "top",
@@ -192,13 +197,49 @@
       "strings": "on"
     }
   },
+  "typescript.preferences.organizeImports": {
+    "groups": [
+      "module",
+      "builtin",
+      "type",
+      "parent",
+      "sibling",
+      "internal",
+      "style"
+    ],
+    "sortOnBeforeOrganize": true
+  },
 
-  // Configs for Prisma
+  // * Configs for Vetur
+  "vetur.validation.template": false,
+  "vetur.validation.style": true,
+  "vetur.validation.script": true,
+  "vetur.format.defaultFormatter.html": "prettyhtml",
+  "vetur.format.defaultFormatter.js": "prettier-eslint",
+  "vetur.format.defaultFormatterOptions": {
+    "js-beautify-html": {
+      "wrap_attributes": "force-aligned"
+    },
+    "prettyhtml": {
+      "printWidth": 100,
+      "singleQuote": false,
+      "wrapAttributes": false,
+      "sortAttributes": false
+    },
+    "css": {
+    "indent_size": 2
+    },
+    "scss": {
+      "indent_size": 2
+    }
+  },
+
+  // * Configs for Prisma
   "[prisma]": {
     "editor.formatOnSave": true
   },
 
-  // Configs for Code Runner
+  // * Configs for Code Runner
   "code-runner.runInTerminal": true,
   "code-runner.enableAppInsights": false,
 
