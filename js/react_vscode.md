@@ -39,11 +39,11 @@
     "*.jsx": "javascriptreact",
     "*.ts": "typescript",
     "*.tsx": "typescriptreact",
+    "*.json": "jsonc",
     ".prettierrc": "json",
     "*.html": "html",
     "*.css": "css",
     "*.md": "markdown",
-    "*.json": "jsonc",
     "*.prisma": "prisma",
     "*.yaml": "yaml",
     ".env": "dotenv",
@@ -69,6 +69,7 @@
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
   "terminal.integrated.defaultProfile.windows": "PowerShell",
   "terminal.integrated.gpuAcceleration": "on",
+  "terminal.integrated.showExitAlert": false,
 
   // * Explorer Configs
   "explorer.confirmDelete": false,
@@ -85,7 +86,7 @@
     "tailwind.config.*": "tailwind.config*, postcss.config*",
     "tsconfig.json": "tsconfig*",
     "package.json": ".eslint*, .prettier*, package-lock*, pnpm-*, bun.lockb, vite*",
-    "docker-compose*": "docker-compose*, .docker-compose*",
+    "docker-compose*": "docker-compose*,
     "Dockerfile": "Dockerfile*, .dockerignore",
     "README.md": "*.md, LICENSE",
     ".gitattributes": ".gitmodules, .gitignore",
@@ -142,14 +143,6 @@
   // * Configs for JavaScript
   "javascript.suggest.autoImports": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "emmet.includeLanguages": {
-    "javascript": "javascriptreact",
-    "typescript": "typescriptreact"
-  },
-  "emmet.syntaxProfiles": {
-    "javascript": "jsx",
-    "typescriptreact": "tsx"
-  },
   "[javascript]": {
     "editor.formatOnSave": true,
     "editor.snippetSuggestions": "top",
@@ -208,6 +201,16 @@
       "style"
     ],
     "sortOnBeforeOrganize": true
+  },
+
+  // * Configs for Emmet
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx",
+    "typescriptreact": "tsx"
   },
 
   // * Configs for Prisma

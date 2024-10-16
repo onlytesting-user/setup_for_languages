@@ -86,6 +86,7 @@
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
   "terminal.integrated.defaultProfile.windows": "PowerShell",
   "terminal.integrated.gpuAcceleration": "on",
+  "terminal.integrated.showExitAlert": false,
 
   // * Explorer Configs
   "explorer.confirmDelete": false,
@@ -94,7 +95,7 @@
   "explorer.compactFolders": false,
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.patterns": {
-    "docker-compose*": "docker-compose*, .docker-compose*",
+    "docker-compose*": "docker-compose*,
     "Dockerfile": "Dockerfile*, .dockerignore",
     "README.md": "*.md, LICENSE",
     ".gitattributes": ".gitmodules, .gitignore",

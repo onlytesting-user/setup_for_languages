@@ -68,6 +68,7 @@
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
   "terminal.integrated.defaultProfile.windows": "PowerShell",
   "terminal.integrated.gpuAcceleration": "on",
+  "terminal.integrated.showExitAlert": false,
 
   // * Explorer Configs
   "explorer.confirmDelete": false,
@@ -84,7 +85,7 @@
     "tsconfig.json": "tsconfig*",
     "package.json": ".eslint*, .prettier*, package-lock*, pnpm-*, bun.lockb, vite*",
     "appsettings.json": "appsettings*.json, connection*",
-    "docker-compose*": "docker-compose*, .docker-compose*",
+    "docker-compose*": "docker-compose*,
     "Dockerfile": "Dockerfile*, .dockerignore",
     "README.md": "*.md, LICENSE",
     ".gitattributes": ".gitmodules, .gitignore",
@@ -140,16 +141,6 @@
   // * Configs for JavaScript
   "javascript.suggest.autoImports": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "emmet.includeLanguages": {
-    "javascript": "javascriptreact",
-    "typescript": "typescript",
-    "vue-html": "html",
-    "vue": "html"
-  },
-  "emmet.syntaxProfiles": {
-    "javascript": "jsx",
-    "vue-html": "html"
-  },
   "[javascript]": {
     "editor.formatOnSave": true,
     "editor.snippetSuggestions": "top",
@@ -208,6 +199,16 @@
       "style"
     ],
     "sortOnBeforeOrganize": true
+  },
+
+  // * Configs for Emmet
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx",
+    "typescriptreact": "tsx"
   },
 
   // * Configs for Vetur
