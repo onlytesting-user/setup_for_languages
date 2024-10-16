@@ -291,8 +291,5 @@
 
   // * Configs for Code Spell Checker
   "cSpell.language": "en,pt,pt_BR",
-  "cSpell.userWords": [
-
-  ],
 }
 ```
