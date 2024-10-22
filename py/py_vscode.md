@@ -63,7 +63,7 @@
     "*.md": "markdown",
     "*.json": "jsonc",
     "*.yaml": "yaml",
-    ".env": "dotenv",
+    ".env": "dotenv"
   },
   "files.exclude": {
     "**/.git": true,
@@ -95,10 +95,10 @@
   "explorer.compactFolders": false,
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.patterns": {
-    "docker-compose*": "docker-compose*,
+    "docker-compose*": "docker-compose*",
     "Dockerfile": "Dockerfile*, .dockerignore",
     "README.md": "*.md, LICENSE",
-    ".gitattributes": ".gitmodules, .gitignore",
+    ".gitattributes": ".gitmodules, .gitignore"
   },
 
   // * diffEditor Configs
@@ -131,8 +131,22 @@
     "*.txt": "text"
   },
   "symbols.folders.associations": {
+    "controllers": "folder-app",
+    "migrations": "folder-database",
     "data": "folder-context",
-    "tests": "folder-orange"
+    "dto": "folder-yellow",
+    "requests": "folder-green",
+    "responses": "folder-sky",
+    "tests": "folder-orange",
+    "properties": "folder-gray-outline",
+    "configurations": "folder-config",
+    "services": "folder-target",
+    "views": "folder-layout",
+    "repositories": "folder-database",
+    "mappers": "folder-router",
+    "filters": "folder-purple-outline",
+    "logging": "folder-gray",
+    "extensions": "folder-red-outline"
   },
 
   // * Configs for YAML

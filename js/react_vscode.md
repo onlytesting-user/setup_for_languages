@@ -47,6 +47,10 @@
     "*.prisma": "prisma",
     "*.yaml": "yaml",
     ".env": "dotenv",
+    "Dockerfile": "dockerfile",
+    "docker-compose": "dockercompose",
+    ".gitignore": "ignore",
+    ".dockerignore": "ignore"
   },
   "files.exclude": {
     "**/.git": true,
@@ -79,17 +83,17 @@
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.patterns": {
     "*.ts": "${capture}.js",
-    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts, ${capture}.test.js, ${capture}.spec.js",
     "*.jsx": "${capture}.js",
     "*.tsx": "${capture}.ts",
     "*.yaml": "*.yml",
     "tailwind.config.*": "tailwind.config*, postcss.config*",
     "tsconfig.json": "tsconfig*",
-    "package.json": ".eslint*, .prettier*, package-lock*, pnpm-*, bun.lockb, vite*",
-    "docker-compose*": "docker-compose*,
+    "package.json": ".eslint*, .prettier*, package-lock*, yarn.lock, pnpm-*, bun.lockb, vite*",
+    "docker-compose*": "docker-compose*",
     "Dockerfile": "Dockerfile*, .dockerignore",
     "README.md": "*.md, LICENSE",
-    ".gitattributes": ".gitmodules, .gitignore",
+    ".gitattributes": ".gitmodules, .gitignore"
   },
 
   // * diffEditor Configs
@@ -236,22 +240,22 @@
     "*.txt": "text"
   },
   "symbols.folders.associations": {
-    "Controllers": "folder-app",
-    "Migrations": "folder-database",
-    "Data": "folder-context",
-    "Dto": "folder-yellow",
-    "Requests": "folder-green",
-    "Responses": "folder-sky",
-    "Tests": "folder-orange",
-    "Properties": "folder-gray-outline",
-    "Configurations": "folder-config",
-    "Services": "folder-target",
-    "Views": "folder-layout",
-    "Repositories": "folder-database",
-    "Mappers": "folder-router",
-    "Filters": "folder-purple-outline",
-    "Logging": "folder-gray",
-    "Extensions": "folder-red-outline"
+    "controllers": "folder-app",
+    "migrations": "folder-database",
+    "data": "folder-context",
+    "dto": "folder-yellow",
+    "requests": "folder-green",
+    "responses": "folder-sky",
+    "tests": "folder-orange",
+    "properties": "folder-gray-outline",
+    "configurations": "folder-config",
+    "services": "folder-target",
+    "views": "folder-layout",
+    "repositories": "folder-database",
+    "mappers": "folder-router",
+    "filters": "folder-purple-outline",
+    "logging": "folder-gray",
+    "extensions": "folder-red-outline"
   },
 
   // * Configs for YAML

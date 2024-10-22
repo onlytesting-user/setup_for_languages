@@ -39,7 +39,7 @@
     "*.md": "markdown",
     "*.json": "jsonc",
     "*.yaml": "yaml",
-    ".env": "dotenv",
+    ".env": "dotenv"
   },
   "files.exclude": {
     "**/.git": true,
@@ -73,10 +73,10 @@
   "explorer.fileNesting.patterns": {
     "*.cs": "*.csproj",
     "appsettings.json": "appsettings*.json, connection*",
-    "docker-compose*": "docker-compose*,
+    "docker-compose*": "docker-compose*",
     "Dockerfile": "Dockerfile*, .dockerignore",
     "README.md": "*.md, LICENSE",
-    ".gitattributes": ".gitmodules, .gitignore",
+    ".gitattributes": ".gitmodules, .gitignore"
   },
 
   // * diffEditor Configs
