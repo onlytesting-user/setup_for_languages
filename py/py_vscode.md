@@ -3,33 +3,33 @@
 ```markdown
 {
  // * Editor Configs
-  "editor.fontFamily": "JetBrains Mono",
-  "editor.fontLigatures": true,
-  "editor.fontSize": 15,
-  "editor.lineHeight": 1.5,
-  "editor.rulers": [
-    100
-  ],
-  "editor.semanticHighlighting.enabled": true,
-  "editor.minimap.enabled": false,
-  "editor.accessibilitySupport": "off",
-  "editor.suggestSelection": "first",
-  "editor.acceptSuggestionOnCommitCharacter": false,
-  "editor.stickyScroll.enabled": false,
-  "editor.cursorBlinking": "expand",
-  "editor.cursorSmoothCaretAnimation": "on",
-  "editor.codeLens": true,
-  "editor.glyphMargin": true,
-  "editor.insertSpaces": true,
-  "editor.tabSize": 4,
-  "editor.indentSize": "tabSize",
-  "editor.snippetSuggestions": "top",
-  "editor.tabCompletion": "on",
-  "editor.quickSuggestions": {
-    "other": "on",
-    "comments": "off",
-    "strings": "off"
-  },
+ "editor.fontFamily": "JetBrains Mono",
+ "editor.fontLigatures": true,
+ "editor.fontSize": 15,
+ "editor.lineHeight": 1.5,
+ "editor.rulers": [
+  100
+ ],
+ "editor.semanticHighlighting.enabled": true,
+ "editor.minimap.enabled": false,
+ "editor.accessibilitySupport": "off",
+ "editor.suggestSelection": "first",
+ "editor.acceptSuggestionOnCommitCharacter": false,
+ "editor.stickyScroll.enabled": false,
+ "editor.cursorBlinking": "expand",
+ "editor.cursorSmoothCaretAnimation": "on",
+ "editor.codeLens": true,
+ "editor.glyphMargin": true,
+ "editor.insertSpaces": true,
+ "editor.tabSize": 4,
+ "editor.indentSize": "tabSize",
+ "editor.snippetSuggestions": "top",
+ "editor.tabCompletion": "on",
+ "editor.quickSuggestions": {
+  "other": "on",
+  "comments": "off",
+  "strings": "off"
+ },
 
  // * Configs for Python
  "[python]": {
@@ -39,13 +39,13 @@
     "editor.codeActionsOnSave": {
         "source.organizeImports": "explicit"
     },
-},
-"isort.args": ["--profile", "black"],
-"autopep8.args": [
-    "--max-line-length", "79",
-    "--aggressive",
-    "--aggressive"
-],
+  },
+  "isort.args": ["--profile", "black"],
+  "autopep8.args": [
+      "--max-line-length", "79",
+      "--aggressive",
+      "--aggressive"
+  ],
 
   // * Configs for Pylance
   "python.languageServer": "Pylance",
@@ -77,11 +77,11 @@
   },
 
  // * Workbench Configs
-  "workbench.startupEditor": "newUntitledFile",
-  "workbench.editor.labelFormat": "short",
-  "workbench.layoutControl.enabled": false,
-  "workbench.tree.enableStickyScroll": false,
-  "workbench.editor.empty.hint": "hidden",
+ "workbench.startupEditor": "newUntitledFile",
+ "workbench.editor.labelFormat": "short",
+ "workbench.layoutControl.enabled": false,
+ "workbench.tree.enableStickyScroll": false,
+ "workbench.editor.empty.hint": "hidden",
 
   // * Terminal Configs
   "terminal.integrated.fontSize": 15,
@@ -119,6 +119,7 @@
   "breadcrumbs.enabled": false,
   "window.commandCenter": false,
   "extensions.ignoreRecommendations": true,
+  "search.followSymlinks": false,
 
   // * Configs for Themes
   "workbench.colorTheme": "One Dark Pro Monokai Darker",
