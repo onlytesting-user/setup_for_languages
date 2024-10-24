@@ -142,7 +142,7 @@
 
   // * Configs for YAML
   "yaml.format.enable": true,
-  "yaml.format.singleQuote": true,
+  "yaml.format.singleQuote": false,
   "[yaml]": {
     "editor.formatOnSave": true,
     "editor.autoIndent": "keep",
