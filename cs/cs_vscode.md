@@ -97,6 +97,7 @@
   "breadcrumbs.enabled": false,
   "window.commandCenter": false,
   "extensions.ignoreRecommendations": true,
+  "search.followSymlinks": false,
 
   // * Configs for Themes
   "workbench.colorTheme": "One Dark Pro Monokai Darker",
