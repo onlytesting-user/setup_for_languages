@@ -16,6 +16,8 @@
   "editor.suggestSelection": "first",
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.stickyScroll.enabled": false,
+  "editor.cursorBlinking": "expand",
+  "editor.cursorSmoothCaretAnimation": "on",
   "editor.codeLens": true,
   "editor.glyphMargin": true,
   "editor.insertSpaces": true,
@@ -89,6 +91,7 @@
   "terminal.integrated.showExitAlert": false,
 
   // * Explorer Configs
+  "explorer.autoReveal": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.sortOrder": "foldersNestsFiles",
