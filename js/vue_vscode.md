@@ -21,7 +21,7 @@
   "editor.codeLens": true,
   "editor.glyphMargin": true,
   "editor.insertSpaces": true,
-  "editor.tabSize": 4,
+  "editor.tabSize": 2,
   "editor.indentSize": "tabSize",
   "editor.snippetSuggestions": "top",
   "editor.tabCompletion": "on",
@@ -40,14 +40,20 @@
     "*.js": "javascript",
     "*.ts": "typescript",
     "*.vue": "vue",
-    ".prettierrc": "json",
+    "*.json": "jsonc",
+    "*.prettierrc*": "json",
     "*.html": "html",
     "*.css": "css",
+    "*.scss": "scss",
+    "*.sass": "sass",
     "*.md": "markdown",
-    "*.json": "jsonc",
     "*.prisma": "prisma",
     "*.yaml": "yaml",
-    ".env": "dotenv"
+    ".env": "dotenv",
+    "Dockerfile": "dockerfile",
+    "docker-compose": "dockercompose",
+    ".gitignore": "ignore",
+    ".dockerignore": "ignore"
   },
   "files.exclude": {
     "**/.git": true,
@@ -55,7 +61,10 @@
     "**/.hg": true,
     "**/CVS": true,
     "**/.DS_Store": true,
-    "**/Thumbs.db": true
+    "**/Thumbs.db": true,
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/.cache": true
   },
 
   // * Workbench Configs
@@ -80,14 +89,15 @@
   "explorer.compactFolders": false,
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.patterns": {
-    "*.ts": "${capture}.js",
-    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.ts": "${capture}.js, ${capture}.test.ts, ${capture}.spec.ts, tsconfig.json",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts, ${capture}.test.js, ${capture}.spec.js",
     "*.vue": "${capture}.ts, ${capture}.js, ${capture}.scss, ${capture}.css",
-    "*.yaml": "*.yml",
+    "*.scss": "${capture}.css, ${capture}.min.css, ${capture}.tailwind.css",
+    "*.css": "${capture}.min.css, ${capture}.map.css, ${capture}.tailwind.css",
     "tailwind.config.*": "tailwind.config*, postcss.config*",
     "tsconfig.json": "tsconfig*",
     "package.json": ".eslint*, .prettier*, package-lock*, pnpm-*, bun.lockb, vite*",
-    "appsettings.json": "appsettings*.json, connection*",
+    "*.yaml": "*.yaml, *.yml",
     "docker-compose*": "docker-compose*",
     "Dockerfile": "Dockerfile*, .dockerignore",
     "README.md": "*.md, LICENSE",
@@ -109,6 +119,7 @@
   "breadcrumbs.enabled": false,
   "window.commandCenter": false,
   "extensions.ignoreRecommendations": true,
+  "search.followSymlinks": false,
 
   // * Configs for Themes
   "workbench.colorTheme": "One Dark Pro Monokai Darker",
@@ -130,6 +141,23 @@
   "prettier.arrowParens": "always",
   "prettier.bracketSpacing": true,
 
+  // * Format on Save
+  "[html]": {
+    "editor.formatOnSave": true
+  },
+  "[css]": {
+    "editor.formatOnSave": true
+  },
+  "[scss]": {
+    "editor.formatOnSave": true
+  },
+  "[sass]": {
+    "editor.formatOnSave": true
+  },
+  "[markdown]": {
+    "editor.formatOnSave": true
+  },
+
   // * Configs for ESLint
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
@@ -138,26 +166,33 @@
     "javascript",
     "typescript",
     "vue",
-    "graphql"
+    "graphql",
+    "html",
+    "css",
+    "scss",
+    "sass",
+    "json"
   ],
 
   // * Configs for JavaScript
   "javascript.suggest.autoImports": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
+  "javascript.preferences.importModuleSpecifier": "project-relative",
   "[javascript]": {
     "editor.formatOnSave": true,
     "editor.snippetSuggestions": "top",
+    "editor.tabCompletion": "on",
     "editor.codeActionsOnSave": {
       "source.organizeImports": "explicit",
       "source.fixAll.ts": "explicit"
     },
-    "editor.tabCompletion": "on",
     "editor.quickSuggestions": {
       "other": "on",
       "comments": "off",
       "strings": "on"
     }
   },
+  "sortOnBeforeOrganize": true,
   "javascript.preferences.organizeImports": {
     "groups": [
       "module",
@@ -167,17 +202,19 @@
       "sibling",
       "internal",
       "style"
-    ],
-    "sortOnBeforeOrganize": true
+    ]
   },
 
   // * Configs for TypeScript
-  "typescript.tsserver.log": "off",
+  "typescript.tsserver.log": "normal",
   "typescript.suggest.autoImports": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "typescript.preferences.preferTypeOnlyAutoImports": true,
-  "typescript.preferences.jsxAttributeCompletionStyle": "auto",
-  "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.preferences.importModuleSpecifier": "project-relative",
+  "typescript.preferences.includePackageJsonAutoImports": "on",
+  "typescript.preferences.importModuleSpecifierEnding": "auto",
+  "typescript.tsserver.experimental.enableProjectDiagnostics": true,
+  "typescript.preferences.jsxAttributeCompletionStyle": "braces",
   "[typescript]": {
     "editor.formatOnSave": true,
     "editor.snippetSuggestions": "top",
@@ -191,6 +228,7 @@
       "strings": "on"
     }
   },
+  "sortOnBeforeOrganize": true,
   "typescript.preferences.organizeImports": {
     "groups": [
       "module",
@@ -200,11 +238,11 @@
       "sibling",
       "internal",
       "style"
-    ],
-    "sortOnBeforeOrganize": true
+    ]
   },
 
   // * Configs for Emmet
+  "emmet.showAbbreviationSuggestions": true,
   "emmet.includeLanguages": {
     "javascript": "javascriptreact",
     "typescript": "typescriptreact"
@@ -240,7 +278,8 @@
 
   // * Configs for Prisma
   "[prisma]": {
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "editor.snippetSuggestions": "top"
   },
 
   // * Configs for Code Runner

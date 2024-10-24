@@ -21,7 +21,7 @@
   "editor.codeLens": true,
   "editor.glyphMargin": true,
   "editor.insertSpaces": true,
-  "editor.tabSize": 4,
+  "editor.tabSize": 2,
   "editor.indentSize": "tabSize",
   "editor.snippetSuggestions": "top",
   "editor.tabCompletion": "on",
@@ -42,9 +42,11 @@
     "*.ts": "typescript",
     "*.tsx": "typescriptreact",
     "*.json": "jsonc",
-    ".prettierrc": "json",
+    "*.prettierrc*": "json",
     "*.html": "html",
     "*.css": "css",
+    "*.scss": "scss",
+    "*.sass": "sass",
     "*.md": "markdown",
     "*.prisma": "prisma",
     "*.yaml": "yaml",
@@ -60,7 +62,10 @@
     "**/.hg": true,
     "**/CVS": true,
     "**/.DS_Store": true,
-    "**/Thumbs.db": true
+    "**/Thumbs.db": true,
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/.cache": true
   },
 
   // * Workbench Configs
@@ -85,14 +90,16 @@
   "explorer.compactFolders": false,
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.patterns": {
-    "*.ts": "${capture}.js",
+    "*.ts": "${capture}.js, ${capture}.test.ts, ${capture}.spec.ts, tsconfig.json",
     "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts, ${capture}.test.js, ${capture}.spec.js",
-    "*.jsx": "${capture}.js",
-    "*.tsx": "${capture}.ts",
-    "*.yaml": "*.yml",
+    "*.tsx": "${capture}.ts, ${capture}.test.tsx, ${capture}.spec.tsx, ${capture}.map",
+    "*.jsx": "${capture}.js, ${capture}.test.jsx, ${capture}.spec.jsx. ${capture}.map",
+    "*.scss": "${capture}.css, ${capture}.min.css, ${capture}.tailwind.css",
+    "*.css": "${capture}.min.css, ${capture}.map.css, ${capture}.tailwind.css",
     "tailwind.config.*": "tailwind.config*, postcss.config*",
     "tsconfig.json": "tsconfig*",
     "package.json": ".eslint*, .prettier*, package-lock*, yarn.lock, pnpm-*, bun.lockb, vite*",
+    "*.yaml": "*.yaml, *.yml",
     "docker-compose*": "docker-compose*",
     "Dockerfile": "Dockerfile*, .dockerignore",
     "README.md": "*.md, LICENSE",
@@ -114,6 +121,7 @@
   "breadcrumbs.enabled": false,
   "window.commandCenter": false,
   "extensions.ignoreRecommendations": true,
+  "search.followSymlinks": false,
 
   // * Configs for Themes
   "workbench.colorTheme": "One Dark Pro Monokai Darker",
@@ -135,6 +143,23 @@
   "prettier.arrowParens": "always",
   "prettier.bracketSpacing": true,
 
+  // * Format on Save
+  "[html]": {
+    "editor.formatOnSave": true
+  },
+  "[css]": {
+    "editor.formatOnSave": true
+  },
+  "[scss]": {
+    "editor.formatOnSave": true
+  },
+  "[sass]": {
+    "editor.formatOnSave": true
+  },
+  "[markdown]": {
+    "editor.formatOnSave": true
+  },
+
   // * Configs for ESLint
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
@@ -144,26 +169,36 @@
     "javascriptreact",
     "typescript",
     "typescriptreact",
-    "graphql"
+    "graphql",
+    "html",
+    "css",
+    "scss",
+    "sass",
+    "json"
   ],
+  "eslint.options": {
+    "configFile": ".eslintrc.js"
+  },
 
   // * Configs for JavaScript
   "javascript.suggest.autoImports": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
+  "javascript.preferences.importModuleSpecifier": "project-relative",
   "[javascript]": {
     "editor.formatOnSave": true,
     "editor.snippetSuggestions": "top",
+    "editor.tabCompletion": "on",
     "editor.codeActionsOnSave": {
       "source.organizeImports": "explicit",
       "source.fixAll.ts": "explicit"
     },
-    "editor.tabCompletion": "on",
     "editor.quickSuggestions": {
       "other": "on",
       "comments": "off",
       "strings": "on"
     }
   },
+  "sortOnBeforeOrganize": true,
   "javascript.preferences.organizeImports": {
     "groups": [
       "module",
@@ -173,20 +208,23 @@
       "sibling",
       "internal",
       "style"
-    ],
-    "sortOnBeforeOrganize": true
+    ]
   },
 
   // * Configs for TypeScript
-  "typescript.tsserver.log": "off",
+  "typescript.tsserver.log": "normal",
   "typescript.suggest.autoImports": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "typescript.preferences.preferTypeOnlyAutoImports": true,
-  "typescript.preferences.jsxAttributeCompletionStyle": "auto",
-  "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.preferences.importModuleSpecifier": "project-relative",
+  "typescript.preferences.includePackageJsonAutoImports": "on",
+  "typescript.preferences.importModuleSpecifierEnding": "auto",
+  "typescript.tsserver.experimental.enableProjectDiagnostics": true,
+  "typescript.preferences.jsxAttributeCompletionStyle": "braces",
   "[typescript]": {
     "editor.formatOnSave": true,
     "editor.snippetSuggestions": "top",
+    "editor.tabCompletion": "on",
     "editor.codeActionsOnSave": {
       "source.organizeImports": "explicit",
       "source.fixAll.ts": "explicit"
@@ -197,6 +235,7 @@
       "strings": "on"
     }
   },
+  "sortOnBeforeOrganize": true,
   "typescript.preferences.organizeImports": {
     "groups": [
       "module",
@@ -206,11 +245,41 @@
       "sibling",
       "internal",
       "style"
-    ],
-    "sortOnBeforeOrganize": true
+    ]
   },
 
+  // * Configs for React
+  "[javascriptreact]": {
+    "editor.formatOnSave": true,
+    "editor.snippetSuggestions": "top",
+    "editor.tabCompletion": "on",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit",
+      "source.fixAll.jsx": "explicit"
+    },
+    "editor.quickSuggestions": {
+      "other": "on",
+      "comments": "off",
+      "strings": "on"
+    }
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": true,
+    "editor.snippetSuggestions": "top",
+    "editor.tabCompletion": "on",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit",
+      "source.fixAll.tsx": "explicit"
+    },
+    "editor.quickSuggestions": {
+      "other": "on",
+      "comments": "off",
+      "strings": "on"
+    }
+   },
+
   // * Configs for Emmet
+  "emmet.showAbbreviationSuggestions": true,
   "emmet.includeLanguages": {
     "javascript": "javascriptreact",
     "typescript": "typescriptreact"
@@ -222,7 +291,8 @@
 
   // * Configs for Prisma
   "[prisma]": {
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "editor.snippetSuggestions": "top"
   },
 
   // * Configs for Code Runner
