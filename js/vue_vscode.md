@@ -8,7 +8,7 @@
   "editor.fontSize": 15,
   "editor.lineHeight": 1.5,
   "editor.rulers": [
-    80
+    100
   ],
   "editor.semanticHighlighting.enabled": true,
   "editor.minimap.enabled": false,
@@ -45,7 +45,6 @@
     "*.html": "html",
     "*.css": "css",
     "*.scss": "scss",
-    "*.sass": "sass",
     "*.md": "markdown",
     "*.prisma": "prisma",
     "*.yaml": "yaml",
@@ -130,7 +129,7 @@
 
   // * Configs for Prettier
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "prettier.printWidth": 80,
+  "prettier.printWidth": 100,
   "prettier.tabWidth": 2,
   "prettier.useTabs": false,
   "prettier.endOfLine": "lf",
@@ -151,9 +150,6 @@
   "[scss]": {
     "editor.formatOnSave": true
   },
-  "[sass]": {
-    "editor.formatOnSave": true
-  },
   "[markdown]": {
     "editor.formatOnSave": true
   },
@@ -170,14 +166,17 @@
     "html",
     "css",
     "scss",
-    "sass",
     "json"
   ],
+  "eslint.options": {
+    "configFile": ".eslintrc.js"
+  },
 
   // * Configs for JavaScript
   "javascript.suggest.autoImports": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "javascript.preferences.importModuleSpecifier": "project-relative",
+  "javascript.suggest.completeFunctionCalls": true,
   "[javascript]": {
     "editor.formatOnSave": true,
     "editor.snippetSuggestions": "top",
@@ -213,6 +212,7 @@
   "typescript.preferences.importModuleSpecifier": "project-relative",
   "typescript.preferences.includePackageJsonAutoImports": "on",
   "typescript.preferences.importModuleSpecifierEnding": "auto",
+  "typescript.suggest.completeFunctionCalls": true,
   "typescript.tsserver.experimental.enableProjectDiagnostics": true,
   "typescript.preferences.jsxAttributeCompletionStyle": "braces",
   "[typescript]": {
