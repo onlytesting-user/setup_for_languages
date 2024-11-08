@@ -1,6 +1,6 @@
 # VS Code Configs
 
-```markdown
+```json
 {
   // * Editor Configs
   "editor.fontFamily": "JetBrains Mono",

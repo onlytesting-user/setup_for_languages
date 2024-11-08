@@ -1,6 +1,6 @@
 # VS Code Configs
 
-```markdown
+```json
 {
  // * Editor Configs
  "editor.fontFamily": "JetBrains Mono",
@@ -8,7 +8,7 @@
  "editor.fontSize": 15,
  "editor.lineHeight": 1.5,
  "editor.rulers": [
-  100
+  120
  ],
  "editor.semanticHighlighting.enabled": true,
  "editor.minimap.enabled": false,
@@ -33,7 +33,7 @@
 
  // * Configs for Python
  "[python]": {
-    "editor.rulers": [79],
+    "editor.rulers": [120],
     "editor.defaultFormatter": "ms-python.autopep8",
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {

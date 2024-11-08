@@ -1,6 +1,6 @@
 # VS Code Configs
 
-```markdown
+```json
 {
   // * Editor Configs
   "editor.fontFamily": "JetBrains Mono",
@@ -8,7 +8,7 @@
   "editor.fontSize": 15,
   "editor.lineHeight": 1.5,
   "editor.rulers": [
-    100
+    120
   ],
   "editor.semanticHighlighting.enabled": true,
   "editor.minimap.enabled": false,
@@ -38,8 +38,9 @@
   "files.insertFinalNewline": true,
   "files.associations": {
     "*.js": "javascript",
+    "*.jsx": "javascriptreact",
     "*.ts": "typescript",
-    "*.vue": "vue",
+    "*.tsx": "typescriptreact",
     "*.json": "jsonc",
     "*.prettierrc*": "json",
     "*.html": "html",
@@ -90,12 +91,13 @@
   "explorer.fileNesting.patterns": {
     "*.ts": "${capture}.js, ${capture}.test.ts, ${capture}.spec.ts, tsconfig.json",
     "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts, ${capture}.test.js, ${capture}.spec.js",
-    "*.vue": "${capture}.ts, ${capture}.js, ${capture}.scss, ${capture}.css",
+    "*.tsx": "${capture}.ts, ${capture}.test.tsx, ${capture}.spec.tsx, ${capture}.map",
+    "*.jsx": "${capture}.js, ${capture}.test.jsx, ${capture}.spec.jsx. ${capture}.map",
     "*.scss": "${capture}.css, ${capture}.min.css, ${capture}.tailwind.css",
     "*.css": "${capture}.min.css, ${capture}.map.css, ${capture}.tailwind.css",
     "tailwind.config.*": "tailwind.config*, postcss.config*",
     "tsconfig.json": "tsconfig*",
-    "package.json": ".eslint*, .prettier*, package-lock*, pnpm-*, bun.lockb, vite*",
+    "package.json": ".eslint*, .prettier*, package-lock*, yarn.lock, pnpm-*, vite*",
     "*.yaml": "*.yaml, *.yml",
     "docker-compose*": "docker-compose*",
     "Dockerfile": "Dockerfile*, .dockerignore",
@@ -129,7 +131,7 @@
 
   // * Configs for Prettier
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "prettier.printWidth": 100,
+  "prettier.printWidth": 120,
   "prettier.tabWidth": 2,
   "prettier.useTabs": false,
   "prettier.endOfLine": "lf",
@@ -160,8 +162,9 @@
   },
   "eslint.validate": [
     "javascript",
+    "javascriptreact",
     "typescript",
-    "vue",
+    "typescriptreact",
     "graphql",
     "html",
     "css",
@@ -213,11 +216,11 @@
   "typescript.preferences.includePackageJsonAutoImports": "on",
   "typescript.preferences.importModuleSpecifierEnding": "auto",
   "typescript.suggest.completeFunctionCalls": true,
-  "typescript.tsserver.experimental.enableProjectDiagnostics": true,
   "typescript.preferences.jsxAttributeCompletionStyle": "braces",
   "[typescript]": {
     "editor.formatOnSave": true,
     "editor.snippetSuggestions": "top",
+    "editor.tabCompletion": "on",
     "editor.codeActionsOnSave": {
       "source.organizeImports": "explicit",
       "source.fixAll.ts": "explicit"
@@ -241,6 +244,36 @@
     ]
   },
 
+  // * Configs for React
+  "[javascriptreact]": {
+    "editor.formatOnSave": true,
+    "editor.snippetSuggestions": "top",
+    "editor.tabCompletion": "on",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit",
+      "source.fixAll.jsx": "explicit"
+    },
+    "editor.quickSuggestions": {
+      "other": "on",
+      "comments": "off",
+      "strings": "on"
+    }
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": true,
+    "editor.snippetSuggestions": "top",
+    "editor.tabCompletion": "on",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit",
+      "source.fixAll.tsx": "explicit"
+    },
+    "editor.quickSuggestions": {
+      "other": "on",
+      "comments": "off",
+      "strings": "on"
+    }
+   },
+
   // * Configs for Emmet
   "emmet.showAbbreviationSuggestions": true,
   "emmet.includeLanguages": {
@@ -248,32 +281,8 @@
     "typescript": "typescriptreact"
   },
   "emmet.syntaxProfiles": {
-    "javascript": "jsx",
+    "javascriptreact": "jsx",
     "typescriptreact": "tsx"
-  },
-
-  // * Configs for Vetur
-  "vetur.validation.template": false,
-  "vetur.validation.style": true,
-  "vetur.validation.script": true,
-  "vetur.format.defaultFormatter.html": "prettyhtml",
-  "vetur.format.defaultFormatter.js": "prettier-eslint",
-  "vetur.format.defaultFormatterOptions": {
-    "js-beautify-html": {
-      "wrap_attributes": "force-aligned"
-    },
-    "prettyhtml": {
-      "printWidth": 100,
-      "singleQuote": false,
-      "wrapAttributes": false,
-      "sortAttributes": false
-    },
-    "css": {
-    "indent_size": 2
-    },
-    "scss": {
-      "indent_size": 2
-    }
   },
 
   // * Configs for Prisma
